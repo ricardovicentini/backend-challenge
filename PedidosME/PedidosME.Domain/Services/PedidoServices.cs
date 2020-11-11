@@ -22,9 +22,11 @@ namespace PedidosME.Domain.Services
 
         public async Task<StatusPedidoDTO> DefinirStatusPedido(AtualizarStatusDTO atualizarStatusDTO, CancellationToken cancellationToken)
         {
-            var pedido = await pedidoRepository.ObterPedidoPorCodigo(atualizarStatusDTO.pedido, cancellationToken);
+            
+            var pedido = await pedidoRepository.ObterPedidoPorCodigoAsync(atualizarStatusDTO.pedido, cancellationToken);
 
-            var statusPedido = new StatusPedido(atualizarStatusDTO).ObterStatus(pedido);
+            //var statusPedido = new StatusPedido(atualizarStatusDTO).ObterStatus(pedido);
+            var statusPedido = new StatusPedido2(atualizarStatusDTO).ClassificarPedido(pedido);
             return new StatusPedidoDTO()
             {
                 Pedido = pedido?.Codigo ?? atualizarStatusDTO.pedido,
@@ -36,7 +38,7 @@ namespace PedidosME.Domain.Services
 
         public async Task<Pedido> ObterPedido(string codigoPedido, CancellationToken cancellationToken)
         {
-            var pedido = await pedidoRepository.ObterPedidoPorCodigo(codigoPedido, cancellationToken);
+            var pedido = await pedidoRepository.ObterPedidoPorCodigoAsync(codigoPedido, cancellationToken);
             await mediator.Publish(new PedidoConsultadoEvent(pedido));
             return pedido;
         }

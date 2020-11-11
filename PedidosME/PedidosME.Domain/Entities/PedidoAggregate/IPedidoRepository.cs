@@ -7,7 +7,6 @@ namespace PedidosME.Domain.Entities.PedidoAggregate
 {
     public interface IPedidoRepository 
     {
-        Task<Pedido> AlterarStatusPedidoAsync(string codigoPedido,CancellationToken cancellationToken);
-        Task<Pedido> ObterPedidoPorCodigo(string codigoPedido, CancellationToken cancellationToken);
+        Task<Pedido> ObterPedidoPorCodigoAsync(string codigoPedido, CancellationToken cancellationToken);
     }
 }

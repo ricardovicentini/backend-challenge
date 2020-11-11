@@ -3,6 +3,7 @@ using PedidosME.Domain.Entities.Core;
 using PedidosME.Domain.Entities.PedidoAggregate.Validators;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace PedidosME.Domain.PedidoAggregate.Entities
@@ -27,7 +28,14 @@ namespace PedidosME.Domain.PedidoAggregate.Entities
         public string Codigo { get; private set; }
         public IEnumerable<ItemPedido> Itens { get; private set; }
 
-
+        public float ValorTotal()
+        {
+            return this.Itens.Sum(x => x.Quantidade * x.PrecoUnitario);
+        }
+        public float QuantidadeItens()
+        {
+            return this.Itens.Sum(x => x.Quantidade);
+        }
         public override ValidationResult ValidationResult => validation;
         public override bool IsValid =>  validation.Errors?.Count == 0;
             
@@ -37,6 +45,8 @@ namespace PedidosME.Domain.PedidoAggregate.Entities
         {
             return new Pedido() { Codigo = codigo };
         }
+
+        
         public override bool Equals(object obj)
         {
             if (obj == null) return false;

@@ -1,5 +1,4 @@
-﻿using MercadoEletronico.Utilities.Enums;
-using PedidosME.Domain.DTOs;
+﻿using PedidosME.Domain.DTOs;
 using PedidosME.Domain.PedidoAggregate.Entities;
 using System;
 using System.Collections.Generic;

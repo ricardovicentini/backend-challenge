@@ -30,11 +30,13 @@ namespace PedidosME.Domain.PedidoAggregate.Entities
         public Pedido Pedido { get; private set; }
         public string CodigoPedido { get; private set; }
 
+        
         public static ItemPedido Criar(string codigoPedido, string descricaoItem, float valor, float quantidade)
         {
             return new ItemPedido() { CodigoPedido = codigoPedido, Descricao = descricaoItem, PrecoUnitario = valor, Quantidade = quantidade };
         }
 
+        
         public override bool IsValid => validation.Errors.Count == 0;
 
 

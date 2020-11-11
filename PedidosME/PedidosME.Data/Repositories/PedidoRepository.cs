@@ -19,13 +19,9 @@ namespace PedidosME.Data.Repositories
             context.Database.EnsureCreated();
         }
 
-        public Task<Pedido> AlterarStatusPedidoAsync(string codigoPedido, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
 
         
-        public async Task<Pedido> ObterPedidoPorCodigo(string codigoPedido, CancellationToken cancellationToken)
+        public async Task<Pedido> ObterPedidoPorCodigoAsync(string codigoPedido, CancellationToken cancellationToken)
         {
 
             return await GetAll(

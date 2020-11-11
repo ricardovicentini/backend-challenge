@@ -48,7 +48,7 @@ namespace PedidosME.IntegrationTests
         {
             //Teste com Repositório específico
             var pedidoRep = services.GetService<IPedidoRepository>();
-            var pedido = await pedidoRep.ObterPedidoPorCodigo ("123456", new CancellationTokenSource().Token);
+            var pedido = await pedidoRep.ObterPedidoPorCodigoAsync ("123456", new CancellationTokenSource().Token);
             Assert.True(pedido.Itens.Count() == 3);
         }
 
