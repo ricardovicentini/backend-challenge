@@ -180,3 +180,5 @@ PedidosME/PedidosME.EmailServices/obj/Debug/netcoreapp3.1/PedidosME.BusServices.
 PedidosME/PedidosME.IntegrationTests/obj/Debug/netcoreapp3.1/PedidosME.IntegrationTests.assets.cache
 PedidosME/PedidosME.IntegrationTests/obj/Debug/netcoreapp3.1/PedidosME.IntegrationTests.csprojAssemblyReference.cache
 PedidosME/MercadoEletronico.Utilites.Data/obj/Debug/netcoreapp3.1/MercadoEletronico.Utilites.Data.assets.cache
+PedidosME/MercadoEletronico.Utilites/obj/Debug/netcoreapp3.1/MercadoEletronico.Utilities.csproj.FileListAbsolute.txt
+PedidosME/MercadoEletronico.Utilites.Data/obj/Debug/netcoreapp3.1/MercadoEletronico.Utilites.Data.csproj.FileListAbsolute.txt
