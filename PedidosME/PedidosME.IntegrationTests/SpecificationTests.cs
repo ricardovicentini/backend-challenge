@@ -218,12 +218,12 @@ namespace PedidosME.IntegrationTests
 
         private static async Task AdicionarPedidoBase(IGenericRepository<Pedido> pedidoRep, CancellationToken token)
         {
-            await pedidoRep.AddAsync(new Pedido("123456",
+            await pedidoRep.AddAsync(new Pedido("XJY2",
                             new List<ItemPedido>()
                             {
-                    ItemPedido.Criar("123456","Produto 1",10,1),
-                    ItemPedido.Criar("123456","Produto 2",5,1),
-                    ItemPedido.Criar("123456","Produto 2",5,1)
+                    ItemPedido.Criar("XJY2","Produto 1",10,1),
+                    ItemPedido.Criar("XJY2","Produto 2",5,1),
+                    ItemPedido.Criar("XJY2","Produto 2",5,1)
                             }), token);
 
             await pedidoRep.CommitAsync(token);

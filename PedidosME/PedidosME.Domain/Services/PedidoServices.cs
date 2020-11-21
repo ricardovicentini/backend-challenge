@@ -4,6 +4,7 @@ using PedidosME.Domain.Entities.PedidoAggregate;
 using PedidosME.Domain.Entities.Specifications;
 using PedidosME.Domain.Events;
 using PedidosME.Domain.PedidoAggregate.Entities;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -30,7 +31,7 @@ namespace PedidosME.Domain.Services
             return new StatusPedidoDTO()
             {
                 Pedido = pedido?.Codigo ?? atualizarStatusDTO.pedido,
-                Status = statusPedido
+                Status = statusPedido.ToList()
             };
 
             

@@ -20,7 +20,7 @@ namespace PedidosME.Domain.Entities.Specifications
         public string ObterStatus(Pedido entity)
         {
             return RuleExpression.Compile().Invoke(entity) ?
-                StatusPedidoEnum.APROVADO_VALOR_A_MAIOR.ToString() : "";
+                StatusPedidoEnum.APROVADO_VALOR_A_MENOR.ToString() : "";
         }
     }
 }

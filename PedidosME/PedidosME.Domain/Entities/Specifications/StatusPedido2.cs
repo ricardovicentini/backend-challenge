@@ -3,11 +3,11 @@
 using PedidosME.Domain.DTOs;
 using PedidosME.Domain.PedidoAggregate.Entities;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace PedidosME.Domain.Entities.Specifications
 {
-    public class StatusPedido2 
+    public class StatusPedido2
     {
         private readonly AtualizarStatusDTO _atualizarStatusDTO;
         private readonly List<IRule<Pedido>> rules = new List<IRule<Pedido>>();
@@ -30,14 +30,14 @@ namespace PedidosME.Domain.Entities.Specifications
 
         public IEnumerable<string> ClassificarPedido(Pedido pedido)
         {
-            List<string> status = new List<string>();
+
             foreach (var rule in rules)
             {
                 var result = rule.ObterStatus(pedido);
                 if(!string.IsNullOrEmpty(result))
-                    status.Add(result);
+                    yield return rule.ObterStatus(pedido);
             }
-            return status;
+            
         }
 
 
